@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <Test/>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Test from '@/components/Test';
+
 export default {
   name: 'app',
+  components: {
+    Test,
+  },
 };
 </script>
 
@@ -19,5 +25,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  --test: red;
 }
 </style>
