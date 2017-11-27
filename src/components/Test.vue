@@ -1,17 +1,16 @@
-<template>
-  <div>
+<template lang="pug">
+  div.
     Test
-  </div>
+    Hey :)
 </template>
 
-<script>
-export default {
-  name: 'Test',
-};
-</script>
-
-<style scoped>
-div {
-  color: var(--test, pink)
-}
+<style lang="stylus" scoped>
+  div
+    color: var(--test, yellow)
 </style>
+
+<script>
+  export default {
+    name: 'Test',
+  };
+</script>
