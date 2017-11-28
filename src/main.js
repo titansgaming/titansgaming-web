@@ -3,6 +3,9 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import PageMeta from './components/PageMeta';
+
+Vue.component('page-meta', PageMeta);
 
 Vue.config.productionTip = false;
 

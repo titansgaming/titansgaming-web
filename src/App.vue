@@ -1,30 +1,29 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <Test/>
-    <router-view/>
-  </div>
+<template lang="pug">
+  div(id="app")
+    div
+      router-link(:to="{name: 'home'}") Home
+    div
+      router-link(:to="'Mumble'") Mumble
+    router-view
 </template>
 
-<script>
-import Test from '@/components/Test';
-
-export default {
-  name: 'app',
-  components: {
-    Test,
-  },
-};
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  --test: red;
-}
+<style lang="stylus">
+  body
+    background-color: #2c3e50;
+  #app
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 60px;
+    --test: red;
+  a, a:visited
+    color: white
 </style>
+
+<script>
+  export default {
+    name: 'app',
+  };
+</script>
