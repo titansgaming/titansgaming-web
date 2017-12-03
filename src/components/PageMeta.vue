@@ -5,17 +5,21 @@
   }
 
   export default {
-    name: 'PageMeta',
-    props: ['title'],
-    created() {
-      updateTitle(this.title);
+    name: 'page-meta',
+    props: {
+      title: {
+        default: '',
+        type: String,
+      },
     },
     watch: {
       title() {
         updateTitle(this.title);
       },
     },
-    render() {
+    created() {
+      updateTitle(this.title);
     },
+    render() { return ''; },
   };
 </script>

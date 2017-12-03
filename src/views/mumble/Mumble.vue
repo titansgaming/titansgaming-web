@@ -3,7 +3,7 @@
     page-meta(title="Mumble")
 
     h1 Mumble
-    ChannelViewer(:channels="channels")
+    tg-server-card(:channels="channels")
 </template>
 
 <style lang="stylus" scoped>
@@ -12,17 +12,17 @@
 </style>
 
 <script>
-  import ChannelViewer from './components/ChannelViewer';
-  import channels from './testdata.json';
+  import TGServerCard from '@/components/TGServerCard';
+  import channels from '@/stories/server/MumbleChannels.json';
 
   export default {
-    name: 'Mumble',
+    name: 'mumble',
     components: {
-      ChannelViewer,
+      'tg-server-card': TGServerCard,
     },
     data() {
       return {
-        channels: channels[0].channels,
+        channels,
       };
     },
   };
