@@ -15,3 +15,8 @@ workflows:
   build:
     jobs:
       - hello-world
+
+general:
+  branches:
+    ignore:
+      - gh-pages
