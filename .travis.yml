@@ -6,6 +6,7 @@ cache:
   - node_modules
 script:
   - yarn build-storybook
+  - cp -r .circleci storybook-static/
 deploy:
   local_dir: storybook-static
   provider: pages
