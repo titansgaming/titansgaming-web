@@ -21,8 +21,8 @@
 </template>
 
 <script>
-  import TGChannelList from './TGChannelList';
-  import TGUserList from './TGUserList';
+  import TGChannelList from './TGChannelList.vue';
+  import TGUserList from './TGUserList.vue';
 
   export default {
     name: 'tg-server-card',

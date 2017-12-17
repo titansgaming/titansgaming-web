@@ -23,10 +23,11 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
-    // don't require .vue extension when importing
+    // Require .vue extension when importing for typescript support
     'import/extensions': ['error', 'always', {
       'js': 'never',
-      'vue': 'never'
+      'ts': 'never',
+      'vue': 'always',
     }],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {

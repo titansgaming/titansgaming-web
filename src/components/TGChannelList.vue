@@ -21,8 +21,8 @@
 </template>
 
 <script>
-  import TGChannelListItem from './TGChannelListItem';
-  import TGUserList from './TGUserList';
+  import TGChannelListItem from './TGChannelListItem.vue';
+  import TGUserList from './TGUserList.vue';
 
   export default {
     name: 'tg-channel-list',

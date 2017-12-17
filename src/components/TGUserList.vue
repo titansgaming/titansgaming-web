@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import TGUserListItem from './TGUserListItem';
+  import TGUserListItem from './TGUserListItem.vue';
 
   export default {
     name: 'tg-user-list',

@@ -12,7 +12,7 @@
 </style>
 
 <script>
-  import TGServerCard from '@/components/TGServerCard';
+  import TGServerCard from '@/components/TGServerCard.vue';
   import channels from '@/stories/server/MumbleChannels.json';
 
   export default {
