@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 
-import TGChannelList from '@/components/TGChannelList';
-import TGServerCard from '@/components/TGServerCard';
+import TGChannelList from '@/components/TGChannelList.vue';
+import TGServerCard from '@/components/TGServerCard.vue';
 
 import MumbleChannels from './MumbleChannels.json';
 import MumbleUsers from './MumbleUsers.json';

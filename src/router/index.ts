@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/views/Home';
-import Mumble from '@/views/mumble/Mumble';
+import Home from '@/views/Home.vue';
+import Mumble from '@/views/mumble/Mumble.vue';
 
 Vue.use(Router);
 

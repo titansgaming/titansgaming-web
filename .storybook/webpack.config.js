@@ -5,6 +5,14 @@ const vueConfig = require('../build/webpack.base.conf')
 
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules = [
+    {
+      test: /\.ts$/,
+      exclude: /node_modules|vue\/src/,
+      loader: 'ts-loader',
+      options: {
+        appendTsSuffixTo: [/\.vue$/]
+      }
+    },
     ...storybookBaseConfig.module.rules,
     ...utils.styleLoaders({
       sourceMap: configType !== 'DEVELOPMENT',

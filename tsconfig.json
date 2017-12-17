@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "outDir": "./built/",
+      "sourceMap": true,
+      "strict": true,
+      "lib": [
+        "dom",
+        "es5",
+        "es2015",
+        "es2015.promise"
+      ],
+      "noImplicitAny": false,
+      "noImplicitReturns": true,
+      "module": "es2015",
+      "moduleResolution": "node",
+      "target": "es5",
+      "experimentalDecorators": true,
+      "typeRoots": [ "node_modules/@types" ]
+  },
+  "include": [
+      "./src/**/*.ts"
+  ]
+}
