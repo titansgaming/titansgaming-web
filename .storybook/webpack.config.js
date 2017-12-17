@@ -1,9 +1,15 @@
 'use strict'
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const config = require('../config')
 const utils = require('../build/utils')
-const vueConfig = require('../build/webpack.base.conf')
+const vueWebpackConfig = require('../build/webpack.base.conf')
 
 module.exports = (storybookBaseConfig, configType) => {
+  const isProduction = configType === 'PRODUCTION'
+  const sourceMapEnabled = isProduction
+    ? config.build.productionSourceMap
+    : config.dev.cssSourceMap
+
   storybookBaseConfig.module.rules = [
     {
       test: /\.ts$/,
@@ -15,11 +21,11 @@ module.exports = (storybookBaseConfig, configType) => {
     },
     ...storybookBaseConfig.module.rules,
     ...utils.styleLoaders({
-      sourceMap: configType !== 'DEVELOPMENT',
+      sourceMap: sourceMapEnabled,
       usePostCSS: true,
     }),
   ];
-  storybookBaseConfig.resolve = vueConfig.resolve;
+  storybookBaseConfig.resolve = vueWebpackConfig.resolve;
 
   if (configType === 'DEVELOPMENT') {
     const host = process.env.STORYBOOK_HOST || 'localhost';
