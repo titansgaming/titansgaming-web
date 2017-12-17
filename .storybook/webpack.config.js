@@ -10,6 +10,7 @@ module.exports = (storybookBaseConfig, configType) => {
     ? config.build.productionSourceMap
     : config.dev.cssSourceMap
 
+
   storybookBaseConfig.module.rules = [
     {
       test: /\.ts$/,
@@ -19,11 +20,12 @@ module.exports = (storybookBaseConfig, configType) => {
         appendTsSuffixTo: [/\.vue$/]
       }
     },
-    ...storybookBaseConfig.module.rules,
+    ...vueWebpackConfig.module.rules,
     ...utils.styleLoaders({
       sourceMap: sourceMapEnabled,
       usePostCSS: true,
     }),
+    storybookBaseConfig.module.rules[0], // Fragile, could break
   ];
   storybookBaseConfig.resolve = vueWebpackConfig.resolve;
 
