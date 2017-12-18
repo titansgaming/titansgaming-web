@@ -28,6 +28,7 @@ module.exports = (storybookBaseConfig, configType) => {
     storybookBaseConfig.module.rules[0], // Fragile, could break
   ];
   storybookBaseConfig.resolve = vueWebpackConfig.resolve;
+  storybookBaseConfig.plugins.push(utils.loaderOptions());
 
   if (configType === 'DEVELOPMENT') {
     const host = process.env.STORYBOOK_HOST || 'localhost';

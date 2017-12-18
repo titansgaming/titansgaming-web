@@ -3,6 +3,10 @@ const path = require('path')
 const config = require('../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const pkg = require('../package.json')
+const webpack = require('webpack');
+const stylusLoader = require('stylus-loader');
+const axisStylusPlugin = require('axis')
+
 
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -51,10 +55,6 @@ exports.cssLoaders = function (options) {
       return ['vue-style-loader'].concat(loaders)
     }
   }
-  var stylesDir = path.resolve(__dirname, '../src/styles')
-  const stylusOptions = {
-    import: [path.join(stylesDir + '/**/*.styl')],
-  };
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
@@ -63,8 +63,8 @@ exports.cssLoaders = function (options) {
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
-    stylus: generateLoaders('stylus', stylusOptions),
-    styl: generateLoaders('stylus', stylusOptions),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus'),
   }
 }
 
@@ -80,6 +80,22 @@ exports.styleLoaders = function (options) {
     })
   }
   return output
+}
+
+exports.loaderOptions = function() {
+  const stylesDir = path.resolve(__dirname, '../src/styles')
+  return new webpack.LoaderOptionsPlugin({
+    options: {
+      stylus: {
+        import: [
+          path.join(stylesDir + '/**/*.styl'),
+        ],
+        use: [
+          axisStylusPlugin(),
+        ],
+      },
+    },
+  })
 }
 
 exports.createNotifierCallback = function () {
