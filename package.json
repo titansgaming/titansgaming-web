@@ -13,13 +13,15 @@
     "lint": "eslint --ext .js,.vue build config src test/unit/specs test/e2e/specs",
     "lint:pug": "pug-lint-vue src/**/*.vue",
     "lint:stylus": "stylint src/**/*.vue",
+    "nuxt": "nuxt",
     "build": "node build/build.js",
     "serve": "yarn run dev",
     "storybook": "start-storybook -p ${STORYBOOK_PORT:-6006}",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "vue": "^2.5.2",
+    "nuxt": "^1.1.1",
+    "vue": "^2.5.13",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -87,7 +89,7 @@
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.5.13",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
