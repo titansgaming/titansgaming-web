@@ -3,3 +3,15 @@
 
 $background-color := #ffffff
 $test-color := orange
+
+-var($name)
+  $value = lookup(join('', '$' $name))
+  join('', 'var(--', $name, ', ' $value ')')
+
+// use _var to create a CSS overidable variable
+// body
+//   background-color: -var(bg)
+// ...
+// body {
+//   background-color: 'var(--bg,  #fff )';
+// }
