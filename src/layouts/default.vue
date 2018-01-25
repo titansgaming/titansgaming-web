@@ -4,6 +4,7 @@
 
 <style lang="stylus">
   body
-    background-color: #2c3e50;
+    $background-color ?= brown
+    background-color: $background-color
     color: #ffffff;
 </style>
